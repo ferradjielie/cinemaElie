@@ -4,10 +4,10 @@ $film = $requeteFilm->fetch();
 ?> 
 
 <h1><?= $film["titre"] ?></h1>
-<p> <strong>Date de Sortie : </strong> <?= $film["DateDeSortie"] ?>         </p>
+<p> <strong>Date de Sortie : </strong> <?= $film["DateDeSortie"] ?>   </p>
 <p> <strong> Note :</strong> <?= $film["note"] ?></p>
 <img src="<?= $film["afficheDeFilm"] ?>" alt="">
-<p> <strong>Durée : </strong><?= $film["duree"]." ". "minutes" ?>                             </p>
+<p> <strong>Durée : </strong><?= $film["duree"]." ". "minutes" ?>      </p>
 <p><strong>Synopsis : </strong>  <?= $film["synopsis"] ?> </p>
 
 <?php 

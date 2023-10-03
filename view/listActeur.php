@@ -14,11 +14,13 @@
     </thead>
     <tbody>
         <?php
-             foreach($requeteActeur->fetchAll() as $film) { ?>
+             foreach($requeteActeur->fetchAll() as $acteur) { 
+              
+                ?>
              <tr>
                    
-                   <td><a href="index.php?action=detailActeurs&id=<?= $film["id_acteur"] ?>"> <?=$film["nom"]?> </a></td>
-                    <td><?= $film["dateDeNaissance"] ?> </td>
+             <td><a href="index.php?action=detailActeurs&id=<?=$acteur["id_acteur"] ?>">  <?=$acteur["prenom"]?>  <?= $acteur["nom"]?>        </a> </td>
+                    <td><?= $acteur["dateDeNaissance"] ?> </td>
 
              </tr>
         <?php    } ?>

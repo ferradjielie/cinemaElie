@@ -13,9 +13,9 @@
     </thead>
     <tbody>
         <?php
-             foreach($requeteGenres->fetchAll() as $film) { ?>
+             foreach($requeteGenres->fetchAll() as $genre) { ?>
              <tr>
-                   <td><?= $film["libelle"]?> </td>
+             <td><a href="index.php?action=DetailGenres&id=<?= $genre["id_genre"] ?>"><?= $genre["libelle"] ?>  </a></td>
              
                    
                 

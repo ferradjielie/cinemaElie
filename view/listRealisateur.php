@@ -5,18 +5,17 @@
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-             <th>Nom </th>
-             <th> Date de naissance </th>
+             <th>Prenom Nom </th>
                    
         </tr>
 
     </thead>
     <tbody>
         <?php
-             foreach($requeteRealisateurs->fetchAll() as $film) { ?>
+             foreach($requeteRealisateurs->fetchAll() as $realisateur) { ?>
              <tr>
-                   <td><?= $film["prenom"]?> </td>
-                   <td><?= $film["nom"]?> </td>
+             <td><a href="index.php?action=detailRealisateurs&id=<?= $realisateur["id_realisateur"] ?>"><?= $realisateur["prenom"]?>  <?= $realisateur["nom"]?>     </a></td>
+                   
                    
                 
 
