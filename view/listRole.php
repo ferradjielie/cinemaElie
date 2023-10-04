@@ -13,9 +13,9 @@
     </thead>
     <tbody>
         <?php
-             foreach($requeteRoles->fetchAll() as $film) { ?>
+             foreach($requeteRoles->fetchAll() as $role) { ?>
              <tr>
-                   <td><?= $film["nomPersonnage"]?> </td>
+             <td><a href="index.php?action=DetailRoles&id=<?= $role["id_role"] ?>"> <?= $role["nomPersonnage"] ?>
                     
 
              </tr>

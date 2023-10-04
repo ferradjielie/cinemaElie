@@ -85,31 +85,74 @@ class CinemaController {
 
     }
 
-    public function DetailGenres () {
+    public function DetailGenres($id) {
         $pdo = Connect::seConnecter();
         $requeteGenres= $pdo -> prepare(
-        " SELECT *
-        FROM genre_film
-        INNER JOIN film
-        ON film.id_film = genre_film.id_film;
-        WHERE id_film = :id");
-        $requeteGenres->execute()
+        "SELECT libelle
+        FROM genre
+        WHERE id_genre = :id");
+        
+        $requeteGenres->execute([ "id" => $id]);
+
+        $requeteGenres2= $pdo -> prepare(
+            "SELECT titre
+            FROM film
+            
+            WHERE id_film = :id");
+            $requeteGenres2->execute([ "id" => $id]);
+    
 
         require "view/detailGenre.php";
 
     }
 
 
+   
+
+
     public function ListRoles () {
         $pdo = Connect::seConnecter();
         $requeteRoles= $pdo -> prepare(
-        "SELECT nomPersonnage
-        FROM role");
+        "SELECT role.id_role, acteur.id_acteur, role.nomPersonnage
+        FROM casting
+        INNER JOIN role
+        ON role.id_role = casting.id_role
+        INNER JOIN acteur
+        ON acteur.id_acteur = casting.id_film
+        ");
         $requeteRoles->execute();
 
         require "view/listRole.php";
 
     }
+    public function DetailRoles ($id) {
+        $pdo = Connect::seConnecter();
+        $requeteRoles1 = $pdo->prepare(
+            "SELECT nomPersonnage
+            FROM role
+            WHERE id_role = :id"
+        );
+    
+        $requeteRoles1->execute(["id" => $id]);
+    
+
+         $requeteRoles2= $pdo -> prepare
+         ("SELECT role.nomPersonnage, acteur.prenom, acteur.nom
+         FROM casting
+         INNER JOIN role
+         ON role.id_role = casting.id_role
+         INNER JOIN acteur
+         ON acteur.id_acteur = casting.id_film
+         WHERE acteur.id_acteur = :id");
+         $requeteRoles2->execute(["id" => $id]);
+           
+
+     
+
+        require "view/detailRole.php";
+
+    }
+
 
 
 

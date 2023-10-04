@@ -15,3 +15,4 @@ $film = $requeteActeur->fetch();
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>
+YTREZ
