@@ -1,18 +1,18 @@
 <?php 
 ob_start();
-$film = $requeteActeur->fetch();
+$acteur = $requeteActeur->fetch();
+$acteurs2 = $requeteActeur2->fetchAll();
 ?> 
 
-<h3><?= $film["prenom"] ?></h3>
-<h3><?= $film["nom"] ?></h3>
+<h2><?= $acteur["prenom"]." ".$acteur["nom"] ." ". " a joué dans" ?></h2>
 
-<h3><?= $film["dateDeNaissance"] ?></h3>
+<?php foreach ($acteurs2 as $acteur2) { ?>
+    <h4><?=  $acteur2["nomPersonnage"]." " ."dans" ." ". " ". $acteur2["titre"]?></h4>
+<?php } ?>
 
 <?php 
-
-    $titre = "Détail d'un acteur";
-    $titre_secondaire = "Détail d'un acteur";
-    $contenu = ob_get_clean();
-    require "view/template.php";
+$titre = "Détail d'un acteur";
+$titre_secondaire = "Détail d'un acteur";
+$contenu = ob_get_clean();
+require "view/template.php";
 ?>
-YTREZ

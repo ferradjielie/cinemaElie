@@ -1,12 +1,17 @@
 <?php 
 ob_start();
 $role1 = $requeteRoles1->fetch(); // Récupère les résultats de la première requête
-$role2 = $requeteRoles2->fetch(); // Récupère les résultats de la deuxième requête
+$roles2 = $requeteRoles2->fetchAll(); // Récupère les résultats de la deuxième requête
 ?>
 
-<h4><?= $role1["nomPersonnage"] ?></h4>
+<h2><?= $role1["nomPersonnage"] ?></h2>
 
-<h4><?= $role2["prenom"] ?> <?= $role2["nom"] ?></h4>
+<?php
+// Utilisez une boucle pour parcourir les résultats de la deuxième requête
+foreach ($roles2 as $role2) {
+    echo "<h4>{$role2["prenom"]} {$role2["nom"]} ({$role2['titre']})</h4>";
+}
+?>
 
 <?php 
 $titre = "Détail d'un role";

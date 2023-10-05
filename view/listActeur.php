@@ -5,8 +5,8 @@
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-             <th>Prenom </th>
-             <th>Nom </th>
+             <th>Prenom Nom </th>
+          
              <th> Date de naissance </th>
                    
         </tr>

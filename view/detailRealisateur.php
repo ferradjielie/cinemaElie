@@ -1,10 +1,13 @@
 <?php 
 ob_start();
-$realisateur = $requeteRealisateurs->fetch();
+$realisateurs = $requeteRealisateurs->fetchAll();
 ?> 
+ 
 
-<h4> <?= $realisateur["prenom"] ?>   <?= $realisateur["nom"] ?>  </h4>
-
+ <?php foreach ($realisateurs as $realisateur) {     ?>                           
+               <h4> <?= $realisateur["titre"]    ?> ( <?= $realisateur [ "anneeSortie"]  ?> )  </h4>                          
+  
+ <?php } ?>
 
 
 
