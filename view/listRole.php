@@ -2,6 +2,8 @@
 
 <p class="uk-label uk-label-warning"> Il y a <?= $requeteRoles-> rowCount() ?> rôles </p>
 
+<a href="index.php?action=formAjouterRole">Ajouter un rôle</a>
+
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>

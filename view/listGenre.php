@@ -1,7 +1,8 @@
 <?php ob_start();?> 
 
 <p class="uk-label uk-label-warning"> Il y a <?= $requeteGenres-> rowCount() ?> Genres </p>
-<p>test</p>
+
+<a href="index.php?action=formAjouterGenre">Ajouter un Genre</a>
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>

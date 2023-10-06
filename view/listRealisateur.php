@@ -2,6 +2,8 @@
 
 <p class="uk-label uk-label-warning"> Il y a <?= $requeteRealisateurs-> rowCount() ?> réalisateurs </p>
 
+<a href="index.php?action=formAjouterRealisateur">Ajouter un Realisateur</a>
+
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>

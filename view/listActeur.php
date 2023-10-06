@@ -2,6 +2,8 @@
 
 <p class="uk-label uk-label-warning"> Il y a <?= $requeteActeur-> rowCount() ?> acteurs </p>
 
+<a href="index.php?action=formAjouterActeur">Ajouter un acteur</a>
+
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>

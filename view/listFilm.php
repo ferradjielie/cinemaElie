@@ -1,6 +1,8 @@
 <?php ob_start();?> 
 
 <p class="uk-label uk-label-warning"> Il y a <?= $requeteFilm-> rowCount() ?> films </p>
+ 
+<a href="index.php?action=formAjouterFilm">Ajouter un film</a>
 
 <table class="uk-table uk-table-striped">
     <thead>
