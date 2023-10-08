@@ -60,6 +60,20 @@ class RealisateurController {
             }
         }
     }
+
+    public function SupprimerRealisateur($id) {
+
+      
+
+
+        $pdo = Connect::seConnecter();
+        if (isset($_GET["id"])) {
+          $supprimerRealisateur = $pdo ->prepare(   "DELETE FROM realisateur
+            WHERE id_realisateur= :id");
+               $supprimerRealisateur->execute(["id" => $id]);
+               header("Location: index.php?action=ListRealisateurs");
+        }
+    }
 }
 
 

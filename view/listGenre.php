@@ -17,7 +17,7 @@
              foreach($requeteGenres->fetchAll() as $genre) { ?>
              <tr>
              <td><a href="index.php?action=DetailGenres&id=<?= $genre["id_genre"] ?>"><?= $genre["libelle"] ?>  </a></td>
-             
+             <td><a href="index.php?action=SupprimerGenre&id=<?= $genre["id_genre"] ?>">Supprimer</a></td>
                    
                 
 

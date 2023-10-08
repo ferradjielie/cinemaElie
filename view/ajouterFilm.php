@@ -29,7 +29,7 @@ $realisateurs = $requeteRealisateurs->fetchAll();
             foreach ($realisateurs as $realisateur) { ?>
                 <option value="<?= $realisateur["id_realisateur"] ?>"><?= $realisateur["prenom"]. " ".$realisateur["nom"] ?></option>
             <?php }
-        ?>
+        ?>|
     </select>
 
      <input type="submit" name="submit" value="Ajouter un film">

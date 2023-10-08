@@ -19,7 +19,7 @@
              <tr>
                    <td><a href="index.php?action=detailFilm&id=<?= $film["id_film"] ?>"><?= $film["titre"]?></a></td>
                     <td><?= $film["dateSortie"] ?> </td>
-
+                    <td><a href="index.php?action=SupprimerFilm&id=<?= $film["id_film"] ?>">Supprimer</a></td>
              </tr>
         <?php    } ?>
         </tbody>

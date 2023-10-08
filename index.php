@@ -31,30 +31,36 @@ if(isset($_GET["action"])) {
         case "detailFilm" : $ctrlFilm -> detailFilm($id); break;
         case "formAjouterFilm": $ctrlFilm->formAjouterFilm(); break;
         case "ajouterFilm": $ctrlFilm->ajouterFilm(); break;
+        case "SupprimerFilm": $ctrlFilm->SupprimerFilm($id); break;
     
         
         case "ListActeurs" : $ctrlActeur-> ListActeurs() ; break;
         case "detailActeurs" : $ctrlActeur-> detailActeurs($id) ; break;
         case "formAjouterActeur": $ctrlActeur->formAjouterActeur(); break;
         case "ajouterActeur": $ctrlActeur->ajouterActeur(); break;
+        case "SupprimerActeur": $ctrlActeur->SupprimerActeur($id); break;
     
 
         case "ListRealisateurs" : $ctrlRealisateur-> ListRealisateurs() ; break;
         case "detailRealisateurs" : $ctrlRealisateur->detailRealisateurs($id) ; break;
         case "formAjouterRealisateur": $ctrlRealisateur->formAjouterRealisateur(); break;
         case "ajouterRealisateur": $ctrlRealisateur->ajouterRealisateur(); break;
+        case "SupprimerRealisateur": $ctrlRealisateur->SupprimerRealisateur($id); break;
+    
     
         
         case "ListGenres" : $ctrlGenre-> ListGenres() ; break;
         case "DetailGenres" : $ctrlGenre-> DetailGenres($id) ; break;
         case "formAjouterGenre": $ctrlGenre->formAjouterGenre(); break;
         case "ajouterGenre": $ctrlGenre->ajouterGenre(); break;
+        case "SupprimerGenre": $ctrlGenre->SupprimerGenre($id); break;
     
     
         case "ListRoles" : $ctrlRole-> ListRoles() ; break;
         case "DetailRoles" : $ctrlRole-> DetailRoles($id) ; break;
         case "formAjouterRole": $ctrlRole->formAjouterRole(); break;
         case "ajouterRole": $ctrlRole->ajouterRole(); break;
+        case "SupprimerRole": $ctrlRole->SupprimerRole($id); break;
         
     }
 }

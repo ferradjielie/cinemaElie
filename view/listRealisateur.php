@@ -17,7 +17,7 @@
              foreach($requeteRealisateurs->fetchAll() as $realisateur) { ?>
              <tr>
              <td><a href="index.php?action=detailRealisateurs&id=<?= $realisateur["id_realisateur"] ?>"><?= $realisateur["prenom"]?>  <?= $realisateur["nom"]?>     </a></td>
-                   
+             <td><a href="index.php?action=SupprimerRealisateur&id=<?= $realisateur["id_realisateur"] ?>">Supprimer</a></td>
                    
                 
 

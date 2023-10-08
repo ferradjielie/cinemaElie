@@ -4,7 +4,7 @@ $acteur = $requeteActeur->fetch();
 $acteurs2 = $requeteActeur2->fetchAll();
 ?> 
 
-<h2><?= $acteur["prenom"]." ".$acteur["nom"] ." ". " a joué dans" ?></h2>
+<h2><?= $acteur["prenom"]." ".$acteur["nom"] ." ". " a joué " ?></h2>
 
 <?php foreach ($acteurs2 as $acteur2) { ?>
     <h4><?=  $acteur2["nomPersonnage"]." " ."dans" ." ". " ". $acteur2["titre"]?></h4>

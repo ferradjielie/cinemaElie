@@ -90,6 +90,20 @@ class FilmController {
             }
         }
     }
+    public function SupprimerFilm($id) {
+
+      
+
+
+        $pdo = Connect::seConnecter();
+        if (isset($_GET["id"])) {
+          $supprimerFilm = $pdo ->prepare(   "DELETE FROM film
+            WHERE id_film= :id");
+               $supprimerFilm->execute(["id" => $id]);
+               header("Location: index.php?action=ListFilms");
+        }
+    }
+         
 
 
 }

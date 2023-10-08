@@ -23,6 +23,7 @@
                    
              <td><a href="index.php?action=detailActeurs&id=<?=$acteur["id_acteur"] ?>">  <?=$acteur["prenom"]?>  <?= $acteur["nom"]?>        </a> </td>
                     <td><?= $acteur["dateDeNaissance"] ?> </td>
+                    <td><a href="index.php?action=SupprimerActeur&id=<?= $acteur["id_acteur"] ?>">Supprimer</a></td>
 
              </tr>
         <?php    } ?>

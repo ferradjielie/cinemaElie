@@ -63,4 +63,30 @@ class RoleController {
             }
         }
     }
+
+    public function SupprimerRole($id) {
+
+      
+
+
+        $pdo = Connect::seConnecter();
+        if (isset($_GET["id"])) {
+          $supprimerRole = $pdo ->prepare(   "DELETE FROM role 
+            WHERE id_role= :id");
+               $supprimerRole->execute(["id" => $id]);
+               header("Location: index.php?action=ListRoles");
+        }
+    }
 }
+ /* $pdo = Connect::seConnecter();
+        if  (isset($_GET["id"])&& isset($_SESSION["role"][$_GET["id"]])) {
+            $deletedRole = $_SESSION ["role"] [$_GET ["id"]];
+            unset($_SESSION["role"][$_GET["id"]]);
+            
+             require "view/supprimerRole.php";
+
+
+           header("Location: index.php?action=ListRoles");
+            
+
+        } */

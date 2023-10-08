@@ -61,7 +61,7 @@ class   ActeurController {
             if($prenomActeur && $nomActeur && $sexeActeur && $naissanceActeur   ) {
                 // On prépare notre requete afin de la protéger des failles injection SQL
                 $requeteInsertActeur = $pdo->prepare("INSERT INTO acteur (prenom, nom, dateDeNaissance, sexe) VALUES (:prenom, :nom, :dateDeNaissance, :sexe)");
-                // Une fois qu'on a prépare notre requete on peut tranquillement éxécuter notre requete sans craindre les failles SQL
+                // Une fois qu'on a prépare notre requete on peut tranquillement exécuter notre requete sans craindre les failles SQL
                 $requeteInsertActeur->execute(
                     [
                         "prenom" => $prenomActeur, 
@@ -78,6 +78,20 @@ class   ActeurController {
                 
                 header("Location: index.php?action=ListActeurs");
             }
+        }
+    }
+
+    public function SupprimerActeur($id) {
+
+      
+
+
+        $pdo = Connect::seConnecter();
+        if (isset($_GET["id"])) {
+          $supprimerActeur = $pdo ->prepare(   "DELETE FROM acteur
+            WHERE id_acteur= :id");
+               $supprimerActeur->execute(["id" => $id]);
+               header("Location: index.php?action=ListActeurs");
         }
     }
 

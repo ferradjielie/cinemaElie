@@ -66,6 +66,20 @@ class GenreController {
             }
         }
     }
+
+    public function SupprimerGenre($id) {
+
+      
+
+
+        $pdo = Connect::seConnecter();
+        if (isset($_GET["id"])) {
+          $supprimerGenre = $pdo ->prepare(   "DELETE FROM genre
+            WHERE id_genre= :id");
+               $supprimerGenre->execute(["id" => $id]);
+               header("Location: index.php?action=ListGenres");
+        }
+    }
          
 
 }
